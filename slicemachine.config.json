@@ -1,0 +1,5 @@
+{
+  "repositoryName": "flowrise",
+  "adapter": "@slicemachine/adapter-next",
+  "libraries": ["./slices"]
+}
