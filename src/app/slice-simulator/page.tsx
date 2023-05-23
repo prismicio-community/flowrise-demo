@@ -1,7 +1,10 @@
+"use client";
+
 import { SliceSimulator } from "@slicemachine/adapter-next/simulator";
 import { SliceZone } from "@prismicio/react";
 
-import { components } from "../slices";
+import "@/app/globals.css";
+import { components } from "../../../slices";
 
 const SliceSimulatorPage = () => {
   return (

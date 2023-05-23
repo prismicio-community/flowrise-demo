@@ -1,7 +1,18 @@
 import "./globals.css";
-import { Nunito_Sans } from "next/font/google";
+import { Nunito_Sans, Nunito } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nunito-sans",
+});
+const nunito = Nunito({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nunito",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -13,9 +24,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // TODO remove {/* @ts-expect-error Server Component */} comments
   return (
     <html lang="en">
-      <body className={nunitoSans.className}>{children}</body>
+      <body className={`${nunitoSans.variable} ${nunito.variable}`}>
+        {/* @ts-expect-error Server Component */}
+        <Header />
+        <div>{children}</div>
+        {/* @ts-expect-error Server Component */}
+        <Footer />
+      </body>
     </html>
   );
 }
