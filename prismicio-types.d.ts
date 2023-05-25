@@ -7,7 +7,29 @@ type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
 /** Content for Homepage documents */
-type HomepageDocumentData = Record<string, never>;
+interface HomepageDocumentData {
+  /**
+   * Slice Zone field in *Homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Homepage → Slice Zone*
+ *
+ */
+type HomepageDocumentDataSlicesSlice =
+  | CallToActionSlice
+  | FeaturesSlice
+  | HeroSlice
+  | TextWithImageSlice
+  | TestimonialsSlice;
 /**
  * Homepage document from Prismic
  *
@@ -18,7 +40,7 @@ type HomepageDocumentData = Record<string, never>;
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomepageDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
+  prismic.PrismicDocumentWithoutUID<
     Simplify<HomepageDocumentData>,
     "homepage",
     Lang
@@ -680,6 +702,7 @@ declare module "@prismicio/client" {
   namespace Content {
     export type {
       HomepageDocumentData,
+      HomepageDocumentDataSlicesSlice,
       HomepageDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavMenuItem,

@@ -5,7 +5,19 @@
   "status": true,
   "json": {
     "Main": {
-      "uid": { "type": "UID", "config": { "label": "UID", "placeholder": "" } }
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "call_to_action": { "type": "SharedSlice" },
+            "features": { "type": "SharedSlice" },
+            "hero": { "type": "SharedSlice" },
+            "text_with_image": { "type": "SharedSlice" },
+            "testimonials": { "type": "SharedSlice" }
+          }
+        }
+      }
     }
   }
 }

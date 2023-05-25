@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`${nunitoSans.variable} ${nunito.variable}`}>
         {/* @ts-expect-error Server Component */}
         <Header />
-        <div>{children}</div>
+        <div className="grid gap-12 mx-auto max-w-6xl">{children}</div>
         {/* @ts-expect-error Server Component */}
         <Footer />
       </body>

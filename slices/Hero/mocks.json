@@ -9,8 +9,10 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Basic"
-						}
+							"text": "Productivity that flows \nwith your life.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -20,8 +22,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Aliquip anim cupidatat ea aute commodo et enim velit irure. Anim non laborum sint."
-						}
+							"text": "Unleash your potential by harmonizing your daily tasks and habits with your unique energy rhythms.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -34,26 +38,26 @@
 			},
 			"button_text": {
 				"__TYPE__": "FieldContent",
-				"value": "please",
-				"type": "Text"
+				"type": "Text",
+				"value": "Try it free"
 			},
 			"image": {
 				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-					"width": 2747,
-					"height": 4120
+					"id": "0DtoVEDaJbs",
+					"url": "https://images.unsplash.com/photo-1457296898342-cdd24585d095?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMnx8ZnJ1aXR8ZW58MHx8fHwxNjg1MDM0Mzk1fDA&ixlib=rb-4.0.3&q=85",
+					"width": 3600,
+					"height": 2700
 				},
-				"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-				"width": 2747,
-				"height": 4120,
+				"url": "https://images.unsplash.com/photo-1457296898342-cdd24585d095?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMnx8ZnJ1aXR8ZW58MHx8fHwxNjg1MDM0Mzk1fDA&ixlib=rb-4.0.3&q=85&rect=0%2C0%2C3600%2C2700&w=3600&h=2700",
+				"width": 3600,
+				"height": 2700,
 				"edit": {
+					"background": "transparent",
 					"zoom": 1,
 					"crop": {
 						"x": 0,
 						"y": 0
-					},
-					"background": "transparent"
+					}
 				},
 				"credits": null,
 				"alt": null,
@@ -73,8 +77,10 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Similar"
-						}
+							"text": "Productivity that flows\nwith your life.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -84,8 +90,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Mollit deserunt in ad elit excepteur labore quis non dolore nulla nisi. Ad cillum occaecat do veniam Lorem."
-						}
+							"text": "Unleash your potential by harmonizing your daily tasks and habits with your unique energy rhythms.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -98,28 +106,30 @@
 			},
 			"button_text": {
 				"__TYPE__": "FieldContent",
-				"value": "article",
-				"type": "Text"
+				"type": "Text",
+				"value": "Try it free"
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
-					"width": 4000,
-					"height": 6000
+					"id": "h5yMpgOI5nI",
+					"url": "https://images.unsplash.com/photo-1584559582128-b8be739912e1?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw4fHxmcnVpdHxlbnwwfHx8fDE2ODUwMzQzOTV8MA&ixlib=rb-4.0.3&q=85",
+					"width": 3710,
+					"height": 3710
 				},
-				"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
-				"width": 4000,
-				"height": 6000,
+				"url": "https://images.unsplash.com/photo-1584559582128-b8be739912e1?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw4fHxmcnVpdHxlbnwwfHx8fDE2ODUwMzQzOTV8MA&ixlib=rb-4.0.3&q=85",
+				"width": 3710,
+				"height": 3710,
 				"edit": {
+					"background": "transparent",
 					"zoom": 1,
 					"crop": {
 						"x": 0,
 						"y": 0
-					},
-					"background": "transparent"
+					}
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
