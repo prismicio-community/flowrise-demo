@@ -1,10 +1,27 @@
-import { Content } from "@prismicio/client";
+import { Heading } from "@/components/Heading";
+import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 
 /**
  * Props for `Features`.
  */
 export type FeaturesProps = SliceComponentProps<Content.FeaturesSlice>;
+
+const components = {
+  heading2: ({ children }: { children: React.ReactNode }) => (
+    <Heading as="h2" size="md" className="text-center mb-12">
+      {children}
+    </Heading>
+  ),
+  heading3: ({ children }: { children: React.ReactNode }) => (
+    <Heading as="h3" size="sm" className="mb-3 font-medium">
+      {children}
+    </Heading>
+  ),
+  paragraph: ({ children }: { children: React.ReactNode }) => (
+    <p className="text-base font-medium font-body text-slate-600">{children}</p>
+  ),
+};
 
 /**
  * Component for "Features" Slices.
@@ -22,45 +39,28 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicRichText
-        field={slice.primary.heading}
-        components={{
-          heading2: ({ children }) => (
-            <h2 className="text-4xl font-bold font-display text-center text-slate-700 mb-12">
-              {children}
-            </h2>
-          ),
-        }}
-      />
+      {isFilled.richText(slice.primary.heading) && (
+        <PrismicRichText
+          field={slice.primary.heading}
+          components={components}
+        />
+      )}
+      {slice.items && (
+        <div className="grid md:grid-cols-4 max-w-5xl gap-8 mx-auto">
+          {slice.items.map((item, index) => (
+            <div key={index}>
+              <div className="mb-5">{icons[item.icon]}</div>
 
-      <div className="grid md:grid-cols-4 max-w-5xl gap-8 mx-auto">
-        {slice.items.map((item, index) => (
-          <div key={index}>
-            <div className="mb-5">{icons[item.icon]}</div>
+              <PrismicRichText field={item.title} components={components} />
 
-            <PrismicRichText
-              field={item.title}
-              components={{
-                heading3: ({ children }) => (
-                  <h3 className="text-3xl font-medium font-display text-slate-700 mb-3">
-                    {children}
-                  </h3>
-                ),
-              }}
-            />
-            <PrismicRichText
-              field={item.description}
-              components={{
-                paragraph: ({ children }) => (
-                  <p className="text-base font-medium font-body text-slate-600">
-                    {children}
-                  </p>
-                ),
-              }}
-            />
-          </div>
-        ))}
-      </div>
+              <PrismicRichText
+                field={item.description}
+                components={components}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };

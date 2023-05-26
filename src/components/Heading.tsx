@@ -1,27 +1,28 @@
-import { PrismicRichText } from "@prismicio/react";
-import { RichTextField } from "@prismicio/client";
+import clsx from "clsx";
 
-export default function Heading({
-  field,
+export const Heading = ({
+  as: Comp = "h1",
+  size = "lg",
+  children,
+  className,
 }: {
-  field: RichTextField;
-}): JSX.Element {
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  size?: "xl" | "lg" | "md" | "sm";
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <PrismicRichText
-      field={field}
-      components={{
-        heading1: ({ children }) => (
-          <h1 className="lg:text-7xl md:text-6xl sm:text-5xl font-bold font-display">
-            {children}
-          </h1>
-        ),
-        heading2: ({ children }) => (
-          <h2 className="lg:text-6xl md:text-5xl sm:text-4xl font-bold font-display">
-            {children}
-          </h2>
-        ),
-        paragraph: ({ children }) => <p className="">{children}</p>,
-      }}
-    />
+    <Comp
+      className={clsx(
+        "font-bold leading-tight tracking-tight md:leading-tight font-display text-slate-700",
+        size === "xl" && "text-5xl md:text-7xl",
+        size === "lg" && "text-4xl md:text-5xl",
+        size === "md" && "text-3xl md:text-4xl",
+        size === "sm" && "text-2xl md:text-3xl",
+        className
+      )}
+    >
+      {children}
+    </Comp>
   );
-}
+};

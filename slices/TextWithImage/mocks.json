@@ -9,8 +9,10 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Thank"
-						}
+							"text": "Harmonize your schedule",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -20,30 +22,34 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Sit aute ut reprehenderit anim consequat dolore dolore excepteur reprehenderit id consectetur dolore duis voluptate."
-						}
+							"text": "Align tasks with your natural energy rhythms. Embrace tailored productivity.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
-					"width": 12288,
-					"height": 16384
+					"id": "euqiHwS38Rw",
+					"url": "https://images.unsplash.com/photo-1595475207225-428b62bda831?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMHx8ZnJ1aXR8ZW58MHx8fHwxNjg1MTIyNjM1fDA&ixlib=rb-4.0.3&q=85",
+					"width": 2500,
+					"height": 2500
 				},
-				"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
-				"width": 12288,
-				"height": 16384,
+				"url": "https://images.unsplash.com/photo-1595475207225-428b62bda831?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMHx8ZnJ1aXR8ZW58MHx8fHwxNjg1MTIyNjM1fDA&ixlib=rb-4.0.3&q=85",
+				"width": 2500,
+				"height": 2500,
 				"edit": {
+					"background": "transparent",
 					"zoom": 1,
 					"crop": {
 						"x": 0,
 						"y": 0
-					},
-					"background": "transparent"
+					}
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
@@ -59,8 +65,10 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Leave"
-						}
+							"text": "Mindful task tracking",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -70,30 +78,34 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Excepteur aliqua ea nisi est non est consectetur nulla et exercitation irure enim nisi. Ipsum excepteur eu deserunt commodo."
-						}
+							"text": "Blend productivity with mindfulness. Understand your patterns, enhance focus.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
-					"width": 6000,
-					"height": 4000
+					"id": "euqiHwS38Rw",
+					"url": "https://images.unsplash.com/photo-1595475207225-428b62bda831?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMHx8ZnJ1aXR8ZW58MHx8fHwxNjg1MTIyNjM1fDA&ixlib=rb-4.0.3&q=85",
+					"width": 2500,
+					"height": 2500
 				},
-				"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
-				"width": 6000,
-				"height": 4000,
+				"url": "https://images.unsplash.com/photo-1595475207225-428b62bda831?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMHx8ZnJ1aXR8ZW58MHx8fHwxNjg1MTIyNjM1fDA&ixlib=rb-4.0.3&q=85",
+				"width": 2500,
+				"height": 2500,
 				"edit": {
+					"background": "transparent",
 					"zoom": 1,
 					"crop": {
 						"x": 0,
 						"y": 0
-					},
-					"background": "transparent"
+					}
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
