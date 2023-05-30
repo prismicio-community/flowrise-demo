@@ -16,10 +16,11 @@ export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
 const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
   return (
     <Bounded
+      as={"section"}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="max-w-4xl m-auto shadow-xl p-12 grid place-items-center rounded-lg bg-gradient-to-tr from-cyan-50 via-white to-emerald-50">
+      <div className="max-w-4xl m-auto shadow-xl md:px-12 px-4 py-12 grid place-items-center rounded-lg bg-gradient-to-tr from-cyan-50 via-white to-emerald-50">
         {isFilled.richText(slice.primary.heading) && (
           <PrismicRichText
             field={slice.primary.heading}

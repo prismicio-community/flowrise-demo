@@ -1,3 +1,4 @@
+import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
@@ -14,12 +15,18 @@ const components = {
     </Heading>
   ),
   heading3: ({ children }: { children: React.ReactNode }) => (
-    <Heading as="h3" size="sm" className="mb-3 font-medium">
+    <Heading
+      as="h3"
+      size="sm"
+      className="mb-3 font-medium sm:text-left text-center"
+    >
       {children}
     </Heading>
   ),
   paragraph: ({ children }: { children: React.ReactNode }) => (
-    <p className="text-base font-medium font-body text-slate-600">{children}</p>
+    <p className="text-base font-medium font-body text-slate-600 sm:text-left text-center">
+      {children}
+    </p>
   ),
 };
 
@@ -35,7 +42,8 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
   };
 
   return (
-    <section
+    <Bounded
+      as="section"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -46,9 +54,12 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
         />
       )}
       {slice.items && (
-        <div className="grid md:grid-cols-4 max-w-5xl gap-8 mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 max-w-5xl gap-x-8 gap-y-12 mx-auto sm:place-items-start place-items-center">
           {slice.items.map((item, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              className="max-w max-w-xs grid sm:place-items-start place-items-center"
+            >
               <div className="mb-5">{icons[item.icon]}</div>
 
               <PrismicRichText field={item.title} components={components} />
@@ -61,7 +72,7 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
           ))}
         </div>
       )}
-    </section>
+    </Bounded>
   );
 };
 
