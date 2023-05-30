@@ -1,7 +1,7 @@
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
-import { Heading } from "@/components/Heading";
+import Heading from "@/components/Heading";
 
 /**
  * Props for `TextWithImage`.

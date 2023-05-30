@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export const Heading = ({
+export default function Heading({
   as: Comp = "h1",
   size = "lg",
   children,
@@ -10,7 +10,7 @@ export const Heading = ({
   size?: "xl" | "lg" | "md" | "sm";
   children: React.ReactNode;
   className?: string;
-}) => {
+}) {
   return (
     <Comp
       className={clsx(
@@ -25,4 +25,4 @@ export const Heading = ({
       {children}
     </Comp>
   );
-};
+}

@@ -1,4 +1,4 @@
-import { Heading } from "@/components/Heading";
+import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 

@@ -2,7 +2,8 @@ import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 
 import Button from "@/components/Button";
-import { Heading } from "@/components/Heading";
+import Heading from "@/components/Heading";
+import Bounded from "@/components/Bounded";
 
 /**
  * Props for `CallToAction`.
@@ -14,7 +15,7 @@ export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
  */
 const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
   return (
-    <section
+    <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -49,7 +50,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
             />
           )}
       </div>
-    </section>
+    </Bounded>
   );
 };
 
