@@ -28,7 +28,9 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
       className="grid gap-8 md:grid-cols-2 place-items-center py-12"
     >
       <div
-        className={`grid gap-4 ${slice.variation === "default" && "order-2"}`}
+        className={`grid gap-4 ${
+          slice.variation === "default" && "md:order-2"
+        }`}
       >
         {isFilled.richText(slice.primary.heading) && (
           <PrismicRichText
