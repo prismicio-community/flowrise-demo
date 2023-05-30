@@ -57,6 +57,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 <Button
                   buttonText={slice.primary.button_text}
                   linkField={slice.primary.button_link}
+                  className="mb-8 md:mb-10"
                 />
               )}
             {isFilled.image(slice.primary.image) && (

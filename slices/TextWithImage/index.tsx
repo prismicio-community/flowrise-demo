@@ -12,7 +12,7 @@ export type TextWithImageProps =
 
 const components = {
   heading2: ({ children }: { children: React.ReactNode }) => (
-    <Heading as="h2" size="lg" className="mb-12">
+    <Heading as="h2" size="lg" className="">
       {children}
     </Heading>
   ),
