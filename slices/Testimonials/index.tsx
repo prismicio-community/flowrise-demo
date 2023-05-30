@@ -3,6 +3,7 @@ import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { createClient } from "../../prismicio";
 import Heading from "@/components/Heading";
+import Bounded from "@/components/Bounded";
 
 /**
  * Props for `Testimonials`.
@@ -16,7 +17,7 @@ const components = {
     </Heading>
   ),
   paragraph: ({ children }: { children: React.ReactNode }) => (
-    <p className="text-2xl font-normal font-body text-slate-600 mb-3">
+    <p className="text-xl md:text-2xl font-normal font-body text-slate-600 mb-8">
       &#8220;{children}&#8221;
     </p>
   ),
@@ -35,7 +36,7 @@ async function Testimonials({
   );
 
   return (
-    <section
+    <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -48,7 +49,7 @@ async function Testimonials({
       <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
         {testimonials.map((item: any, index: number) => (
           <div
-            className="border bg-slate-50 shadow-lg rounded-lg px-14 py-16 grid content-between"
+            className="border bg-slate-50 shadow-lg rounded-lg px-8 md:px-14 py-10 md:py-16 grid content-between"
             key={index}
           >
             {isFilled.richText(item.data.quote) && (
@@ -63,7 +64,7 @@ async function Testimonials({
                   width={56}
                   height={56}
                   field={item.data.avatar}
-                  className="rounded-full "
+                  className="rounded-full mr-4"
                   imgixParams={{
                     ar: "1:1",
                     fit: "crop",
@@ -86,7 +87,7 @@ async function Testimonials({
           </div>
         ))}
       </div>
-    </section>
+    </Bounded>
   );
 }
 
