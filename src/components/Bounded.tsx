@@ -10,7 +10,7 @@ export default function Bounded({
   children: React.ReactNode;
 }) {
   return (
-    <Comp className={clsx("px-4 py-8 md:py-10 md:px-6 lg:py-12", className)}>
+    <Comp className={clsx("px-4 py-12 md:py-14 md:px-6 lg:py-16", className)}>
       <div className={"mx-auto w-full max-w-6xl"}>{children}</div>
     </Comp>
   );
