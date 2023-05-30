@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 export default function Bounded({
-  as: Comp = "div",
+  as: Comp = "section",
   className,
   children,
 }: {
