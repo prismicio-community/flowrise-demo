@@ -1,6 +1,7 @@
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
+
 import { createClient } from "../../prismicio";
 import Heading from "@/components/Heading";
 import Bounded from "@/components/Bounded";
