@@ -6,8 +6,8 @@ import { createClient } from "../../prismicio";
 
 export default async function Home() {
   const client = createClient();
+
   const page: PrismicDocument = await client.getSingle("homepage");
-  console.log("🚀 ~ file: page.tsx:8 ~ Home ~ page:", page);
 
   return (
     <main>
