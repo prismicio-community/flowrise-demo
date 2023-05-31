@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { createClient } from "../../prismicio";
-import Bounded from "@/components/Bounded";
-import Logo from "@/components/Logo";
 import { LinkField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import { KeyTextField } from "@prismicio/types";
 
+import Logo from "@/components/Logo";
+import Bounded from "@/components/Bounded";
 export default async function Header() {
   const client = createClient();
 
@@ -17,7 +18,9 @@ export default async function Header() {
   return (
     <Bounded as="header" className=" py-4 md:py-6 lg:py-8">
       <div className="flex gap-4 items-center justify-between sm:flex-row flex-col">
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
         <nav>
           <ul className="flex text-base">
             {settings.data.nav_menu.map(
