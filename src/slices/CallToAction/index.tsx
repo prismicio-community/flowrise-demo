@@ -45,10 +45,9 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
         )}
         {isFilled.keyText(slice.primary.button_text) &&
           isFilled.link(slice.primary.button_link) && (
-            <Button
-              buttonText={slice.primary.button_text}
-              linkField={slice.primary.button_link}
-            />
+            <Button field={slice.primary.button_link}>
+              {slice.primary.button_text}
+            </Button>
           )}
       </div>
     </Bounded>

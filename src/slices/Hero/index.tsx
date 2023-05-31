@@ -1,5 +1,9 @@
 import { Content, isFilled } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+  PrismicRichText,
+  PrismicRichTextProps,
+  SliceComponentProps,
+} from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
 import Button from "@/components/Button";
@@ -11,8 +15,7 @@ import Bounded from "@/components/Bounded";
  */
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
-/** @type {import("@prismicio/react").PrismicRichTextProps['components']} */
-const components = {
+const components: PrismicRichTextProps["components"] = {
   heading1: ({ children }: { children: React.ReactNode }) => (
     <Heading
       as="h1"
@@ -56,10 +59,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             {isFilled.link(slice.primary.button_link) &&
               isFilled.keyText(slice.primary.button_text) && (
                 <Button
-                  buttonText={slice.primary.button_text}
-                  linkField={slice.primary.button_link}
+                  field={slice.primary.button_link}
                   className="mb-8 md:mb-10"
-                />
+                >
+                  {slice.primary.button_text}
+                </Button>
               )}
             {isFilled.image(slice.primary.image) && (
               <PrismicNextImage
@@ -98,10 +102,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               )}
               {isFilled.link(slice.primary.button_link) &&
                 isFilled.keyText(slice.primary.button_text) && (
-                  <Button
-                    buttonText={slice.primary.button_text}
-                    linkField={slice.primary.button_link}
-                  />
+                  <Button field={slice.primary.button_link}>
+                    {slice.primary.button_text}
+                  </Button>
                 )}
             </div>
             {isFilled.image(slice.primary.image) && (

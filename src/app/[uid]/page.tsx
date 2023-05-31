@@ -1,7 +1,7 @@
 import { SliceZone } from "@prismicio/react";
 
-import { components } from "../../../slices";
-import { createClient } from "../../../prismicio";
+import { components } from "@/slices";
+import { createClient } from "@/prismicio";
 
 export default async function Page({ params }: { params: { uid: string } }) {
   const client = createClient();
