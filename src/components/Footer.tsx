@@ -12,7 +12,7 @@ export default async function Footer() {
       <div className="flex sm:flex-row flex-col justify-between items-center gap-6">
         <Logo />
 
-        <div className="flex text-center gap-4 text-sm  flex-wrap sm:flex-row flex-col">
+        <div className="flex text-center gap-4 text-sm flex-wrap sm:flex-row flex-col">
           <p>
             © {new Date().getFullYear()} {settings.data.site_name}
           </p>
