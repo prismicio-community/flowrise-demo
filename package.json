@@ -28,7 +28,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@prismicio/types": "^0.2.7",
+    "@prismicio/types": "^0.2.8",
     "@slicemachine/adapter-next": "^0.2.0",
     "slice-machine-ui": "^1.1.0"
   }
