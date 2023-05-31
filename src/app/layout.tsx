@@ -27,12 +27,13 @@ export default function RootLayout({
   // TODO remove {/* @ts-expect-error Server Component */} comments
   return (
     <html lang="en">
-      <body className={`${nunitoSans.variable} ${nunito.variable}`}>
+      <body className={`${nunitoSans.variable} ${nunito.variable} `}>
         {/* @ts-expect-error Server Component */}
         <Header />
         <div className="grid gap-12 mx-auto max-w-6xl">{children}</div>
         {/* @ts-expect-error Server Component */}
         <Footer />
+        <div className="fixed bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1] inset-0"></div>
       </body>
     </html>
   );
