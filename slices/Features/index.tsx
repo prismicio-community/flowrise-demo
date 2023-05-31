@@ -1,7 +1,8 @@
-import Bounded from "@/components/Bounded";
-import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+
+import Bounded from "@/components/Bounded";
+import Heading from "@/components/Heading";
 
 /**
  * Props for `Features`.

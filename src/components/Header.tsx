@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { createClient } from "../../prismicio";
-import { LinkField } from "@prismicio/client";
+import { LinkField, KeyTextField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
-import { KeyTextField } from "@prismicio/types";
+import { createClient } from "../../prismicio";
 
 import Logo from "@/components/Logo";
 import Bounded from "@/components/Bounded";
