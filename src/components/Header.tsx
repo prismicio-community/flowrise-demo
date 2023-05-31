@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { LinkField, KeyTextField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
-import { createClient } from "../../prismicio";
 
+import { createClient } from "@/prismicio";
 import Logo from "@/components/Logo";
 import Bounded from "@/components/Bounded";
+
 export default async function Header() {
   const client = createClient();
 
   const settings = await client.getSingle("settings");
-  await console.log(
+  console.log(
     "🚀 ~ file: Header.tsx:9 ~ Header ~ settings:",
     settings.data.nav_menu
   );

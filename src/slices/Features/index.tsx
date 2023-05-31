@@ -1,21 +1,20 @@
 import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import {
+  SliceComponentProps,
+  PrismicRichText,
+  PrismicRichTextProps,
+} from "@prismicio/react";
 
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 
-/**
- * Props for `Features`.
- */
-export type FeaturesProps = SliceComponentProps<Content.FeaturesSlice>;
-
-const components = {
-  heading2: ({ children }: { children: React.ReactNode }) => (
+const components: PrismicRichTextProps["components"] = {
+  heading2: ({ children }) => (
     <Heading as="h2" size="md" className="text-center mb-12">
       {children}
     </Heading>
   ),
-  heading3: ({ children }: { children: React.ReactNode }) => (
+  heading3: ({ children }) => (
     <Heading
       as="h3"
       size="sm"
@@ -24,24 +23,29 @@ const components = {
       {children}
     </Heading>
   ),
-  paragraph: ({ children }: { children: React.ReactNode }) => (
+  paragraph: ({ children }) => (
     <p className="text-base font-medium font-body text-slate-600 sm:text-left text-center">
       {children}
     </p>
   ),
 };
 
+const icons = {
+  calendar: <CalendarIcon />,
+  bargraph: <BarGraphIcon />,
+  clover: <CloverIcon />,
+  hourglass: <HourglassIcon />,
+};
+
+/**
+ * Props for `Features`.
+ */
+export type FeaturesProps = SliceComponentProps<Content.FeaturesSlice>;
+
 /**
  * Component for "Features" Slices.
  */
 const Features = ({ slice }: FeaturesProps): JSX.Element => {
-  const icons = {
-    calendar: <CalendarIcon />,
-    bargraph: <BarGraphIcon />,
-    clover: <CloverIcon />,
-    hourglass: <HourglassIcon />,
-  };
-
   return (
     <Bounded
       as="section"

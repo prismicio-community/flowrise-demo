@@ -1,4 +1,4 @@
-import { createClient } from "../../prismicio";
+import { createClient } from "@/prismicio";
 import Bounded from "@/components/Bounded";
 import Logo from "@/components/Logo";
 
