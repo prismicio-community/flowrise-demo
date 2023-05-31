@@ -9,10 +9,10 @@ export default async function Footer() {
 
   return (
     <Bounded as="footer">
-      <div className="grid sm:grid-cols-3 grid-cols-1 md:place-items-stretch place-items-center gap-4">
+      <div className="flex sm:flex-row flex-col justify-between items-center gap-6">
         <Logo />
-        <div className="flex gap-2 md:place-self-center">Social Links</div>
-        <div className="flex text-center gap-4 text-sm md:place-self-end flex-wrap sm:flex-row flex-col">
+
+        <div className="flex text-center gap-4 text-sm  flex-wrap sm:flex-row flex-col">
           <p>
             © {new Date().getFullYear()} {settings.data.site_name}
           </p>
