@@ -18,6 +18,39 @@ interface HomepageDocumentData {
    *
    */
   slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice>;
+  /**
+   * Meta Title field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: homepage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_title: prismic.KeyTextField;
+  /**
+   * Meta Description field in *Homepage*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: homepage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  meta_description: prismic.RichTextField;
+  /**
+   * Meta Image field in *Homepage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  meta_image: prismic.ImageField<never>;
 }
 /**
  * Slice for *Homepage → Slice Zone*
@@ -611,7 +644,7 @@ export interface TestimonialsSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  testimonial: prismic.RelationField<"testimonial">;
+  testimonial: prismic.ContentRelationshipField<"testimonial">;
 }
 /**
  * Default variation for Testimonials Slice

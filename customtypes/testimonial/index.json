@@ -28,5 +28,6 @@
         "config": { "label": "Avatar", "constraint": {}, "thumbnails": [] }
       }
     }
-  }
+  },
+  "format": "custom"
 }
