@@ -50,7 +50,7 @@ async function Testimonials({
       <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
         {testimonials.map((item: any, index: number) => (
           <div
-            className="border bg-slate-50 shadow-lg rounded-lg px-8 md:px-14 py-10 md:py-16 grid content-between"
+            className="border bg-white shadow-lg rounded-lg px-8 md:px-14 py-10 md:py-16 grid content-between"
             key={index}
           >
             {isFilled.richText(item.data.quote) && (
