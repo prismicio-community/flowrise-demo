@@ -10,10 +10,6 @@ export default async function Header() {
   const client = createClient();
 
   const settings = await client.getSingle("settings");
-  console.log(
-    "🚀 ~ file: Header.tsx:9 ~ Header ~ settings:",
-    settings.data.nav_menu
-  );
 
   return (
     <Bounded as="header" className=" py-4 md:py-6 lg:py-8">
