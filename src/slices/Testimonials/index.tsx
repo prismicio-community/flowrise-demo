@@ -33,7 +33,11 @@ async function Testimonials({
   const client = createClient();
 
   const testimonials = await Promise.all(
-    slice.items.map((item) => client.getByID(item.testimonial.id))
+    slice.items.map((item) => {
+      if (isFilled.contentRelationship(item.testimonial)) {
+        return client.getByID(item.testimonial.id);
+      }
+    })
   );
 
   return (
