@@ -63,7 +63,7 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
           {slice.items.map((item, index) => (
             <div
               key={index}
-              className="max-w max-w-xs grid sm:place-items-start place-items-center"
+              className="max-w-xs grid sm:place-items-start place-items-center"
             >
               <div className="mb-5">{icons[item.icon]}</div>
 
