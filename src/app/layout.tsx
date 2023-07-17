@@ -1,7 +1,9 @@
-import "./globals.css";
-
-import { Nunito_Sans, Nunito } from "next/font/google";
 import clsx from "clsx";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
+import { Nunito_Sans, Nunito } from "next/font/google";
+
+import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -35,6 +37,7 @@ export default function RootLayout({
         <div className="grid gap-12 mx-auto max-w-6xl">{children}</div>
         <Footer />
         <div className="fixed bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1] inset-0" />
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   );
