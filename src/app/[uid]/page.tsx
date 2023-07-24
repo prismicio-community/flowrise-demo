@@ -39,9 +39,5 @@ export default async function Page({ params }: { params: { uid: string } }) {
 
   const page = await client.getByUID("page", params.uid);
 
-  return (
-    <main>
-      <SliceZone components={components} slices={page.data.slices} />
-    </main>
-  );
+  return <SliceZone components={components} slices={page.data.slices} />;
 }

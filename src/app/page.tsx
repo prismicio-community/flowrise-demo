@@ -36,9 +36,5 @@ export default async function Home() {
 
   const page = await client.getSingle("homepage");
 
-  return (
-    <main>
-      <SliceZone components={components} slices={page.data.slices} />
-    </main>
-  );
+  return <SliceZone components={components} slices={page.data.slices} />;
 }
