@@ -1,5 +1,4 @@
 import { Metadata, ResolvingMetadata } from "next";
-import * as prismic from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 
 import { components } from "@/slices";
@@ -24,7 +23,7 @@ export async function generateMetadata(
 
   return {
     title: page.data.meta_title,
-    description: prismic.asText(page.data.meta_description),
+    description: page.data.meta_description,
     openGraph: {
       images: [page.data.meta_image.url || ""],
     },
