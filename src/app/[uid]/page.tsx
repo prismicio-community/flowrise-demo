@@ -1,43 +1,42 @@
-import { Metadata, ResolvingMetadata } from "next";
-import * as prismic from "@prismicio/client";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { SliceZone } from "@prismicio/react";
 
-import { components } from "@/slices";
 import { createClient } from "@/prismicio";
+import { components } from "@/slices";
 
-type Props = {
-  params: { uid: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+type Params = { uid: string };
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
-  const uid = params.uid;
+export const dynamicParams = false;
 
-  // fetch data
+export default async function Page({ params }: { params: Params }) {
   const client = createClient();
+  const page = await client
+    .getByUID("page", params.uid)
+    .catch(() => notFound());
 
-  const page = await client.getByUID("page", uid);
+  return <SliceZone slices={page.data.slices} components={components} />;
+}
 
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || [];
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> {
+  const client = createClient();
+  const page = await client.getByUID("page", params.uid);
 
   return {
     title: page.data.meta_title,
-    description: prismic.asText(page.data.meta_description),
-    openGraph: {
-      images: [page.data.meta_image.url || ""],
-    },
+    description: page.data.meta_description,
   };
 }
 
-export default async function Page({ params }: { params: { uid: string } }) {
+export async function generateStaticParams() {
   const client = createClient();
+  const pages = await client.getAllByType("page");
 
-  const page = await client.getByUID("page", params.uid);
-
-  return <SliceZone components={components} slices={page.data.slices} />;
+  return pages.map((page) => {
+    return { uid: page.uid };
+  });
 }
