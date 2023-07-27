@@ -30,11 +30,8 @@
         }
       },
       "meta_description": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Meta Description",
-          "placeholder": "A brief summary of the page"
-        }
+        "type": "Text",
+        "config": { "label": "Meta Description", "placeholder": "" }
       },
       "meta_image": {
         "type": "Image",

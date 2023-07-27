@@ -39,13 +39,13 @@ interface HomepageDocumentData {
   /**
    * Meta Description field in *Homepage*
    *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: A brief summary of the page
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
    * - **API ID Path**: homepage.meta_description
    * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  meta_description: prismic.RichTextField;
+  meta_description: prismic.KeyTextField;
 
   /**
    * Meta Image field in *Homepage*
@@ -110,13 +110,13 @@ interface PageDocumentData {
   /**
    * Meta Description field in *Page*
    *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: A brief summary of the page
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
    * - **API ID Path**: page.meta_description
    * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  meta_description: prismic.RichTextField;
+  meta_description: prismic.KeyTextField;
 
   /**
    * Meta Image field in *Page*
