@@ -55,7 +55,10 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
           )}
         </div>
         {isFilled.image(slice.primary.image) && (
-          <PrismicNextImage field={slice.primary.image} />
+          <PrismicNextImage
+            field={slice.primary.image}
+            className="rounded-lg"
+          />
         )}
       </div>
     </Bounded>
