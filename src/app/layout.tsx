@@ -31,7 +31,7 @@ export default function RootLayout({
         <Header />
         <main className="grid gap-12 mx-auto max-w-6xl">{children}</main>
         <Footer />
-        <div className="fixed bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1] inset-0" />
+        <div className="fixed bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1] inset-0 opacity-50" />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
