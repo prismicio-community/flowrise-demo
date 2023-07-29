@@ -26,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={clsx(nunitoSans.variable, nunito.variable)}>
+    <html lang="en" className={clsx(nunitoSans.variable, nunito.variable)}>
+      <body>
         <Header />
         <main className="grid gap-12 mx-auto max-w-6xl">{children}</main>
         <Footer />
