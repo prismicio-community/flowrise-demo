@@ -21,6 +21,9 @@ const components: JSXMapSerializer = {
       {children}
     </Heading>
   ),
+  paragraph: ({ children }) => (
+    <p className="max-w-md text-lg font-body text-slate-600">{children}</p>
+  ),
 };
 
 /**
@@ -48,13 +51,7 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
           {isFilled.richText(slice.primary.body) && (
             <PrismicRichText
               field={slice.primary.body}
-              components={{
-                paragraph: ({ children }) => (
-                  <p className="max-w-md text-lg font-body text-slate-600">
-                    {children}
-                  </p>
-                ),
-              }}
+              components={components}
             />
           )}
         </div>
