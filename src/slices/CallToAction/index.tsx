@@ -1,5 +1,9 @@
 import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import {
+  SliceComponentProps,
+  JSXMapSerializer,
+  PrismicRichText,
+} from "@prismicio/react";
 
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
@@ -9,6 +13,17 @@ import Bounded from "@/components/Bounded";
  * Props for `CallToAction`.
  */
 export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
+
+const components: JSXMapSerializer = {
+  heading2: ({ children }) => (
+    <Heading size="sm" className="font-semibold text-center mb-4">
+      {children}
+    </Heading>
+  ),
+  paragraph: ({ children }) => (
+    <p className="text-center text-slate-600 mb-8">{children}</p>
+  ),
+};
 
 /**
  * Component for "CallToAction" Slices.
@@ -24,24 +39,11 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
         {isFilled.richText(slice.primary.heading) && (
           <PrismicRichText
             field={slice.primary.heading}
-            components={{
-              heading2: ({ children }) => (
-                <Heading size="sm" className="font-semibold text-center mb-4">
-                  {children}
-                </Heading>
-              ),
-            }}
+            components={components}
           />
         )}
         {isFilled.richText(slice.primary.body) && (
-          <PrismicRichText
-            field={slice.primary.body}
-            components={{
-              paragraph: ({ children }) => (
-                <p className="text-center text-slate-600 mb-8">{children}</p>
-              ),
-            }}
-          />
+          <PrismicRichText field={slice.primary.body} components={components} />
         )}
         {isFilled.keyText(slice.primary.button_text) &&
           isFilled.link(slice.primary.button_link) && (

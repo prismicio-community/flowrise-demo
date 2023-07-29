@@ -2,13 +2,13 @@ import { Content, isFilled } from "@prismicio/client";
 import {
   SliceComponentProps,
   PrismicRichText,
-  PrismicRichTextProps,
+  JSXMapSerializer,
 } from "@prismicio/react";
 
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 
-const components: PrismicRichTextProps["components"] = {
+const components: JSXMapSerializer = {
   heading2: ({ children }) => (
     <Heading as="h2" size="md" className="text-center mb-12">
       {children}

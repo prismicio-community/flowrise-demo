@@ -1,5 +1,9 @@
 import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import {
+  SliceComponentProps,
+  JSXMapSerializer,
+  PrismicRichText,
+} from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
 import { createClient } from "@/prismicio";
@@ -11,7 +15,7 @@ import Bounded from "@/components/Bounded";
  */
 export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
 
-const components = {
+const components: JSXMapSerializer = {
   heading2: ({ children }: { children: React.ReactNode }) => (
     <Heading size="md" className="text-center mb-9 font-semibold">
       {children}

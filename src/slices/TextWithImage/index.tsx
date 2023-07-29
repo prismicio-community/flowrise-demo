@@ -1,5 +1,9 @@
 import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import {
+  SliceComponentProps,
+  JSXMapSerializer,
+  PrismicRichText,
+} from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
 import Heading from "@/components/Heading";
@@ -11,7 +15,7 @@ import Bounded from "@/components/Bounded";
 export type TextWithImageProps =
   SliceComponentProps<Content.TextWithImageSlice>;
 
-const components = {
+const components: JSXMapSerializer = {
   heading2: ({ children }: { children: React.ReactNode }) => (
     <Heading as="h2" size="lg" className="">
       {children}
