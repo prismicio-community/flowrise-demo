@@ -34,8 +34,11 @@ async function Testimonials({
 
   const testimonials = await Promise.all(
     slice.items.map((item) => {
-      if (isFilled.contentRelationship(item.testimonial)) {
-        return client.getByID(item.testimonial.id);
+      if (
+        isFilled.contentRelationship(item.testimonial) &&
+        item.testimonial.uid
+      ) {
+        return client.getByUID("testimonial", item.testimonial.uid);
       }
     })
   );
@@ -52,45 +55,48 @@ async function Testimonials({
         />
       )}
       <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
-        {testimonials.map((item: any, index: number) => (
-          <div
-            className="border bg-white shadow-lg rounded-lg px-8 md:px-14 py-10 md:py-16 grid content-between"
-            key={index}
-          >
-            {isFilled.richText(item.data.quote) && (
-              <PrismicRichText
-                field={item.data.quote}
-                components={components}
-              />
-            )}
-            <div className="flex">
-              {isFilled.image(item.data.avatar) && (
-                <PrismicNextImage
-                  width={56}
-                  height={56}
-                  field={item.data.avatar}
-                  className="rounded-full mr-4"
-                  imgixParams={{
-                    ar: "1:1",
-                    fit: "crop",
-                  }}
-                />
-              )}
-              <div>
-                {isFilled.keyText(item.data.name) && (
-                  <p className="text-base font-medium text-slate-700">
-                    {item.data.name}
-                  </p>
+        {testimonials.map(
+          (item, index) =>
+            item && (
+              <div
+                className="border bg-white shadow-lg rounded-lg px-8 md:px-14 py-10 md:py-16 grid content-between"
+                key={index}
+              >
+                {isFilled.richText(item.data.quote) && (
+                  <PrismicRichText
+                    field={item.data.quote}
+                    components={components}
+                  />
                 )}
-                {isFilled.keyText(item.data.company) && (
-                  <p className="text-base text-slate-600">
-                    {item.data.company}
-                  </p>
-                )}
+                <div className="flex">
+                  {isFilled.image(item.data.avatar) && (
+                    <PrismicNextImage
+                      width={56}
+                      height={56}
+                      field={item.data.avatar}
+                      className="rounded-full mr-4"
+                      imgixParams={{
+                        ar: "1:1",
+                        fit: "crop",
+                      }}
+                    />
+                  )}
+                  <div>
+                    {isFilled.keyText(item.data.name) && (
+                      <p className="text-base font-medium text-slate-700">
+                        {item.data.name}
+                      </p>
+                    )}
+                    {isFilled.keyText(item.data.company) && (
+                      <p className="text-base text-slate-600">
+                        {item.data.company}
+                      </p>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            )
+        )}
       </div>
     </Bounded>
   );
