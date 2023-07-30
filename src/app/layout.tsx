@@ -24,13 +24,13 @@ const nunito = Nunito({
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
 
-  const page = await client.getSingle("homepage");
+  const page = await client.getSingle("settings");
 
   return {
-    title: page.data.meta_title || "Flowrise",
+    title: page.data.site_name || "Flowrise",
     description: page.data.meta_description || "Flowrise is the app for you.",
     openGraph: {
-      images: [page.data.meta_image.url || ""],
+      images: [page.data.og_image.url || ""],
     },
   };
 }
