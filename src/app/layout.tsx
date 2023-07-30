@@ -1,6 +1,7 @@
+import { Metadata } from "next";
 import clsx from "clsx";
 import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
+import { repositoryName, createClient } from "@/prismicio";
 import { Nunito_Sans, Nunito } from "next/font/google";
 
 import "./globals.css";
@@ -19,6 +20,20 @@ const nunito = Nunito({
   display: "swap",
   variable: "--font-nunito",
 });
+
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+
+  const page = await client.getSingle("homepage");
+
+  return {
+    title: page.data.meta_title || "Flowrise",
+    description: page.data.meta_description || "Flowrise is the app for you.",
+    openGraph: {
+      images: [page.data.meta_image.url || ""],
+    },
+  };
+}
 
 export default function RootLayout({
   children,
